@@ -1,17 +1,11 @@
 package com.hannanmax.pizzaapp_a00265130.Adapter
 
 import android.annotation.SuppressLint
-import android.content.ContentValues
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.hannanmax.pizzaapp_a00265130.Data.FirebaseDBHelper
@@ -22,8 +16,6 @@ import com.squareup.picasso.Picasso
 
 class CustomPizzaListAdapter(private val context: Context, private val pizzaItemNodeList: ArrayList<String>, private val pizzaItemList: ArrayList<PizzaItemList>) : BaseAdapter() {
 
-    private val database = Firebase.database
-    private val myCartRef = database.getReference("Cart")
     var pizzaSize: String = ""
 
     override fun getCount(): Int {
