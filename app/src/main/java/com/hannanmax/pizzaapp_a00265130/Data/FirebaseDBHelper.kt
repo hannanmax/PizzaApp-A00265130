@@ -19,7 +19,9 @@ class FirebaseDBHelper {
     private val myPizzasRef = database.getReference("Pizza")
     private val myCartRef = database.getReference("Cart")
     var pizzaItemArrayList : ArrayList<PizzaItemList> = ArrayList()
+    var cartItemArrayList : ArrayList<CartItemList> = ArrayList()
     var pizzaItemNodeArrayList : ArrayList<String> = ArrayList()
+    var cartItemNodeArrayList : ArrayList<String> = ArrayList()
     val bannerList = ArrayList<SlideModel>()
 
     @JvmName("getPizzaItemArrayList1")
@@ -46,6 +48,38 @@ class FirebaseDBHelper {
         return pizzaItemNodeArrayList to pizzaItemArrayList
     }
 
+    @JvmName("getCartItemArrayList1")
+    fun getCartItemArrayList(context: Context): Pair<ArrayList<String>,ArrayList<CartItemList>>{
+        myCartRef.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    cartItemArrayList.clear()
+                    cartItemNodeArrayList.clear()
+                    for (ds in snapshot.children) {
+                        val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
+                        if (snapshot.hasChild("Cart-$currentUser")) {
+                            for (mDs in ds.children) {
+                                Log.d("NodeName: ", mDs.key!!)
+                                cartItemNodeArrayList.add(mDs.key!!)
+                                val cartItems = mDs.getValue(CartItemList::class.java)
+                                cartItemArrayList.add(cartItems!!)
+                            }
+                        } else {
+                            Toast.makeText(context, "Nothing is in the cart yet...",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.w(ContentValues.TAG, "Failed to read value.", error.toException())
+            }
+        })
+
+        return cartItemNodeArrayList to cartItemArrayList
+    }
+
     @JvmName("getBannerList1")
     fun getBannerList(): ArrayList<SlideModel>{
         myBannersRef.addValueEventListener(object: ValueEventListener {
@@ -67,7 +101,7 @@ class FirebaseDBHelper {
         return bannerList
     }
 
-    fun addToCart(context: Context, pizzaID: String, price: String, pizzaSize: String, quantity: Int) {
+    fun addToCart(context: Context, pizzaID: String, price: Double, pizzaSize: String, quantity: Int) {
         myCartRef.addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
