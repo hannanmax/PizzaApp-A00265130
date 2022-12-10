@@ -23,40 +23,7 @@
         app:period="3000"
         app:delay="5"/>
 
-    <TextView
-        android:id="@+id/tv_pizzatitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/banner"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Available Pizza"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <ListView
-        android:id="@+id/lw_pizza_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ll_bottom_navbar"
-        android:layout_below="@+id/tv_pizzatitle"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp" />
-
-    <ScrollView
-        android:id="@+id/scrollview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ll_bottom_navbar">
-
-    </ScrollView>
     <LinearLayout
-        android:id="@+id/ll_bottom_navbar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"
@@ -68,8 +35,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center"
-            android:background="@color/yellow">
+            android:gravity="center">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,7 +52,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@color/yellow">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
