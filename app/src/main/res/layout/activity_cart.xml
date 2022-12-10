@@ -8,22 +8,19 @@
     android:background="#4e586e"
     tools:context=".MainActivity">
 
-    <com.carousel.auna.ImageSlider
-        android:id="@+id/banner"
+    <ListView
+        android:id="@+id/lw_pizza_list"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        app:auto_cycle="true"
-        android:gravity="center"
-        app:corner_radius="50"
-        android:layout_margin="8dp"
-        app:placeholder="@drawable/placeholder"
-        app:error_image="@drawable/error"
-        app:selected_dot="@drawable/default_selected_dot"
-        app:unselected_dot="@drawable/default_unselected_dot"
-        app:period="3000"
-        app:delay="5"/>
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_bottom_navbar"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp" />
 
     <LinearLayout
+        android:id="@+id/ll_bottom_navbar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"

@@ -67,7 +67,7 @@ class CustomPizzaListAdapter(private val context: Context, private val pizzaItem
                     binding.rgMedium.id -> pizzaSize = "Medium"
                     binding.rgLarge.id -> pizzaSize = "Large"
                 }
-                val price = binding.tvPrice.text.split("Price $")[1]
+                val price = (binding.tvPrice.text.split("Price $")[1]).toString().toDouble()
                 val firebaseDBHelper = FirebaseDBHelper()
                 firebaseDBHelper.addToCart(context, pizzaItemNodeList[position], price, pizzaSize, binding.tvQ.text.toString().toInt())
             } else {
