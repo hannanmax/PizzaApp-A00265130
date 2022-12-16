@@ -35,8 +35,20 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.llOrdersbtn.setOnClickListener{
+            val intent = Intent(applicationContext, PlacedOrdersActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
         binding.llProfilebtn.setOnClickListener{
             val intent = Intent(applicationContext, ProfileActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+        binding.btnCreateOwn.setOnClickListener{
+            val intent = Intent(applicationContext, CustomPizzaActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }

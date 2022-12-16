@@ -20,6 +20,12 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.llOrdersbtn.setOnClickListener{
+            val intent = Intent(applicationContext, PlacedOrdersActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
         binding.llHomebtn.setOnClickListener{
             val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

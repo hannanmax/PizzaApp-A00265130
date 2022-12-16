@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import com.hannanmax.pizzaapp_a00265130.Data.FirebaseDBHelper
 import com.hannanmax.pizzaapp_a00265130.Data.PizzaItemList
 import com.hannanmax.pizzaapp_a00265130.databinding.CustomPizzaItemListLayoutBinding
@@ -16,7 +14,7 @@ import com.squareup.picasso.Picasso
 
 class CustomPizzaListAdapter(private val context: Context, private val pizzaItemNodeList: ArrayList<String>, private val pizzaItemList: ArrayList<PizzaItemList>) : BaseAdapter() {
 
-    var pizzaSize: String = ""
+    private var pizzaSize: String = ""
 
     override fun getCount(): Int {
         return pizzaItemList.size
@@ -40,8 +38,8 @@ class CustomPizzaListAdapter(private val context: Context, private val pizzaItem
 
         val current = pizzaItemList[position]
         Picasso.get().load(current.img).into(binding.imgPizza)
-        binding.tvPizzaTitle.setText(current.Name)
-        binding.tvPizzaDesc.setText(current.Desc)
+        binding.tvPizzaTitle.text = current.Name
+        binding.tvPizzaDesc.text = current.Desc
         setPrice(binding.rgSize.checkedRadioButtonId, position, binding)
 
         binding.rgSize.setOnCheckedChangeListener { _, checkedId ->

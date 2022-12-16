@@ -89,6 +89,7 @@
         android:text="Price: $0.00"
         android:layout_gravity="center"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_margin="4dp"/>
 
     <LinearLayout
@@ -108,9 +109,10 @@
             android:id="@+id/tv_q"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="1"
             android:textStyle="bold"
             android:layout_margin="4dp"
+            android:textColor="@color/black"
             android:padding="8dp"/>
 
         <Button
