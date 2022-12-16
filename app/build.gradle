@@ -62,9 +62,9 @@ dependencies {
     implementation 'com.github.UmarAuna:Carousels-Kotlin:0.0.2'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    //
+    // multidex class
     implementation 'androidx.multidex:multidex:2.0.1'
 
-    //
+    // Retrofit for json
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 }
