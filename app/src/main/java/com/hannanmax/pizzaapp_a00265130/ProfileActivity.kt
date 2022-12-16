@@ -1,9 +1,12 @@
 package com.hannanmax.pizzaapp_a00265130
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.hannanmax.pizzaapp_a00265130.databinding.ActivityProfileBinding
+
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -31,5 +34,18 @@ class ProfileActivity : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
+
+        binding.btnLogout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut();
+            val intent = Intent(applicationContext, SignInActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+        val user = FirebaseAuth.getInstance().currentUser
+
+        val profileUpdates = UserProfileChangeRequest.Builder()
+            .setDisplayName("HannanMax").build()
+        binding.tvName.text = FirebaseAuth.getInstance().currentUser?.displayName.toString()
     }
 }

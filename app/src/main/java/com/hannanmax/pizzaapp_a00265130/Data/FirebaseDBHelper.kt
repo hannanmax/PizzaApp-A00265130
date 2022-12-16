@@ -61,42 +61,9 @@ class FirebaseDBHelper {
                     cartItemArrayList.clear()
                     cartItemNodeArrayList.clear()
                     for (ds in snapshot.children) {
-                        Log.d("NodeName: ", ds.key!!)
                         val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
                         if (snapshot.hasChild("Cart-$currentUser")) {
                             for (mDs in ds.children) {
-                                Log.d("NodeName: ", mDs.key!!)
-                                cartItemNodeArrayList.add(mDs.key!!)
-                                val cartItems = mDs.getValue(CartItemList::class.java)
-                                cartItemArrayList.add(cartItems!!)
-                            }
-                        } else {
-                            Toast.makeText(context, "Nothing is in the cart yet...",Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.w(ContentValues.TAG, "Failed to read value.", error.toException())
-            }
-        })
-        return cartItemNodeArrayList to cartItemArrayList
-    }
-
-    @JvmName("getCartItemToOrderArrayList1")
-    fun getCartItemToOrderArrayList(context: Context): Pair<ArrayList<String>,ArrayList<CartItemList>>{
-        myCartRef.addValueEventListener(object: ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    cartItemArrayList.clear()
-                    cartItemNodeArrayList.clear()
-                    for (ds in snapshot.children) {
-                        Log.d("NodeName: ", ds.key!!)
-                        val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
-                        if (snapshot.hasChild("Cart-$currentUser")) {
-                            for (mDs in ds.children) {
-                                Log.d("NodeName: ", mDs.key!!)
                                 cartItemNodeArrayList.add(mDs.key!!)
                                 val cartItems = mDs.getValue(CartItemList::class.java)
                                 cartItemArrayList.add(cartItems!!)
@@ -209,7 +176,6 @@ class FirebaseDBHelper {
     }
 
     fun moveFirebaseRecord(fromPath: String, toPath: String) {
-        Log.d("PATHHHHHHHH: ", "\n$fromPath\n$toPath")
         val myFromPath = database.getReference(fromPath)
         val myToPath = database.getReference(toPath)
         myFromPath.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -231,7 +197,7 @@ class FirebaseDBHelper {
     }
 
     fun deleteCartItem(context: Context, cartNode: String) {
-        Log.d("PATH", "Cart/Cart-$currentUser/$cartNode")
         myCartRef.child("Cart-$currentUser").child(cartNode).removeValue()
     }
+
 }

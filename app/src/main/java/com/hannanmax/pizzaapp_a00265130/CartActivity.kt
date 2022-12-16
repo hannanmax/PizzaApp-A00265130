@@ -94,6 +94,7 @@ class CartActivity : AppCompatActivity() {
     private fun updateCartCheckOut(cartItemArrayList: ArrayList<CartItemList>) {
         var count = 0
         Log.d("CartTotalSIZE: ", cartItemArrayList.size.toString())
+        cartTotal = 0f
         for(item in cartItemArrayList){
             try {
                 cartTotal += cartItemArrayList.get(count).price!!

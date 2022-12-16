@@ -1,11 +1,15 @@
 package com.hannanmax.pizzaapp_a00265130
 
+import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.hannanmax.pizzaapp_a00265130.databinding.ActivitySignUpBinding
+
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
@@ -33,11 +37,21 @@ class SignUpActivity : AppCompatActivity() {
                 if (pass == confirmPass) {
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
+                            val user = FirebaseAuth.getInstance().currentUser
+
+                            val profileUpdates = UserProfileChangeRequest.Builder()
+                                .setDisplayName("Hannan Max").build()
+
+                            user!!.updateProfile(profileUpdates)
+                                .addOnCompleteListener { task ->
+                                    if (task.isSuccessful) {
+                                        Log.d(TAG, "User profile updated.")
+                                    }
+                                }
                             val intent = Intent(this, VerifyEmailActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
-
                         }
                     }
                 } else {

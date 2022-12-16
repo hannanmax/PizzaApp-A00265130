@@ -9,7 +9,7 @@
     tools:context=".PlacedOrdersActivity">
 
     <ListView
-        android:id="@+id/lw_pizza_list"
+        android:id="@+id/lw_order_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

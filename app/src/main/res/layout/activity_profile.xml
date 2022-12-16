@@ -23,6 +23,27 @@
         app:period="3000"
         app:delay="5"/>
 
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="Username"/>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"
+        android:layout_below="@+id/tv_name"
+        android:text="LOGOUT"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
