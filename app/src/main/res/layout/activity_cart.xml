@@ -8,15 +8,44 @@
     android:background="#4e586e"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/ll_cart_check_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtotal $0.00"
+            android:textStyle="bold"
+            android:textSize="28sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Till december 2022 christmas eve all delivery is free."/>
+        <Button
+            android:id="@+id/btn_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/yellow"
+            android:clickable="false"
+            android:text="Proceed to checkout (0 Items)"/>
+    </LinearLayout>
+
     <ListView
         android:id="@+id/lw_pizza_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_cart_check_out"
         android:layout_above="@+id/ll_bottom_navbar"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_alignParentTop="true"
         android:layout_marginBottom="8dp" />
 
     <LinearLayout
@@ -41,6 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/home"
+                android:textColor="@color/black"
                 android:textStyle="bold"/>
         </LinearLayout>
         <LinearLayout
@@ -59,6 +89,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cart"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_ordersbtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_orders_24"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/orders"
+                android:textColor="@color/black"
                 android:textStyle="bold"/>
         </LinearLayout>
         <LinearLayout
@@ -76,6 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/profile"
+                android:textColor="@color/black"
                 android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
