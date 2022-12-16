@@ -67,4 +67,8 @@ dependencies {
 
     // Retrofit for json
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    // Lottie Animations
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
