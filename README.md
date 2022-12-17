@@ -222,16 +222,16 @@ Firebase Realtime:
 ```
 ## Screenshots:
 - SignIn Activity
-  ![](login.png | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/login.png?raw=true | width=100)
 - SignUp Activity
-  ![](signup.png | width=100 )
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/signup.png?raw=true | width=100 )
 - Home Activity
-  ![](home.png | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/home.png?raw=true | width=100)
 - Cart Activity
-  ![](cart.png | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/cart.png?raw=true | width=100)
 - Placed Orders Activity
-  ![](placedorders.png | width=100)
+  ![](phttps://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/placedorders.png?raw=true | width=100)
 - Profile Activity
-  ![](Profile.png | width=100)
+  ![](Phttps://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/Profile.png?raw=true | width=100)
 - Custom Activity
-  ![](custompizza.png | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/custompizza.png?raw=true | width=100)
