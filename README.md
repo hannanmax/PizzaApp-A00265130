@@ -222,16 +222,16 @@ Firebase Realtime:
 ```
 ## Screenshots:
 - SignIn Activity
-  ![](login.png)
+  ![](login.png | width=100)
 - SignUp Activity
-  ![](signup.png)
+  ![](signup.png | width=100 )
 - Home Activity
-  ![](home.png)
+  ![](home.png | width=100)
 - Cart Activity
-  ![](cart.png)
+  ![](cart.png | width=100)
 - Placed Orders Activity
-  ![](placedorders.png)
+  ![](placedorders.png | width=100)
 - Profile Activity
-  ![](Profile.png)
+  ![](Profile.png | width=100)
 - Custom Activity
-  ![](custompizza.png)
+  ![](custompizza.png | width=100)
