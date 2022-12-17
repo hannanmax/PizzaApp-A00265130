@@ -222,16 +222,16 @@ Firebase Realtime:
 ```
 ## Screenshots:
 - SignIn Activity
-  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/login.png?raw=true | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/login.png | width=100)
 - SignUp Activity
-  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/signup.png?raw=true | width=100 )
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/signup.png | width=100 )
 - Home Activity
-  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/home.png?raw=true | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/home.png | width=100)
 - Cart Activity
-  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/cart.png?raw=true | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/cart.png | width=100)
 - Placed Orders Activity
-  ![](phttps://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/placedorders.png?raw=true | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/placedorders.png | width=100)
 - Profile Activity
-  ![](Phttps://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/Profile.png?raw=true | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/Profile.png | width=100)
 - Custom Activity
-  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/custompizza.png?raw=true | width=100)
+  ![](https://github.com/Cambrian-ITCAMD/PizzaApp-A00265130/blob/main/Screenshot/custompizza.png | width=100)
